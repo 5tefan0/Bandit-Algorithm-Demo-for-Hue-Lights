@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    margin-left: 10%;
+}
+img{
+   padding: 25px;
+}
+button{
+          height: 90px;
+          width: 130px;
+          padding: 15px 25px;
+          font-size: 14px;
+          text-align: center;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+        }
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.Row
+{
+    display: table;
+}
+.Column
+{
+    display: table-cell;
+}
+</style>
+
+<script src="mathjs/dist/math.js"></script>
+<script src="rands/rands.min.js"></script>
+
+<script src="linear_algebra/numeric-1.2.6.js"></script> <!-- to do Linear Algebra -->
+
+<!-- my functions -->
+<script src="bandit_functions/getProbabilityOfExploration.js"></script>
+<script src="bandit_functions/normalDistance.js"></script>
+<script src="bandit_functions/realContextDistance.js"></script>
+<script src="bandit_functions/getBestColor.js"></script>
+<script src="jquery_functions/jquery-3.0.0.min.js"></script>
+<script src="jquery_functions/queries.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1>
+Contextual bandit for Philips Hue lights <img src="im/hue_icon.png" style="float:left;width:90px;height:90px;">
+</h1>
+
+<p>This demo shows how the contextual bandit algorithm works.</p>
+
+<p id="show"> </p>
+
+<p id="show2"> </p>
+
+
+
+<button id="startingButton" onclick="Initialize()"> START! </button>
+<script src="bandit_functions/start3.js"> </script>
+
+<!-- onclick runs
+<button id="start" onclick="start.js"> Set number of rounds </button>
+<script src="start.js"> </script>  -->
+<!--
+<script> if (n != undefined) {document.getElementById("show2").innerHTML = "The number of turns is " + n }</script>
+<script src="start2.js"> </script> -->
+
+<script src="bandit_functions/start2.js"> </script>
+
+
+
+<p id="demo"></p>
+<!--
+context -->
+
+<script src="bandit_functions/getContext.js"> </script>
+<img id="weatherImage"></img>
+<p class="contextP" id="showWeatherContext"></p>
+<p class="contextP" id="showDayContext"></p>
+<p class="contextP" id="showTemperatureContext"></p>
+<p class="contextP" id="showTimeContext"></p>
+
+<p id="showChosenColor" style="color:red;"> </p>
+
+<p id="chooseColorP"> Choose your color for the current context: </p>
+
+<!-- colors -->
+<div class="Row">
+<div id="divWrapper1" class="Column">
+    <button id="color1" style="background-color:blue" value="0"  class="btn" onclick="numberOfTurns4(this.value)"></button>
+</div>
+
+<div id="divWrapper2" class="Column">
+    <button id="color2" style="background-color:red" value="1"  class="btn" onclick="numberOfTurns4(this.value)"></button>
+</div>
+
+<div id="divWrapper3" class="Column">
+    <button id="color3" style="background-color:yellow" value="2"  class="btn" onclick="numberOfTurns4(this.value)"></button>
+</div>
+
+<div id="divWrapper4" class="Column">
+    <button id="color4" style="background-color:magenta" value="3"  class="btn" onclick="numberOfTurns4(this.value)"></button>
+</div>
+
+<div id="divWrapper5" class="Column">
+    <button id="color5" style="background-color:cyan" value="4"  class="btn" onclick="numberOfTurns4(this.value)"></button>
+</div>
+
+<div id="divWrapper6" class="Column">
+    <button id="color6" style="background-color:green" value="5"  class="btn" onclick="numberOfTurns4(this.value)"></button>
+</div>
+</div>
+
+
+
+<p id="showAlgorithmColor"></p>
+
+<button id="getContextButton" onclick="getContext()"> Get new context </button>
+
+<p id="Reward"></p>
+<p id="CumulativeReward"></p>
+
+
+</body>
+</html>
